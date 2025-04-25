@@ -1,71 +1,78 @@
 # 🧬 Cancer Type Classification Using Gene Expression Data
 
-This project builds a robust machine learning pipeline for predicting cancer types using RNA-seq gene expression profiles. The notebook includes exploratory data analysis, feature selection, model training, and evaluation on an independent test set.
+This project presents a complete machine learning pipeline for predicting cancer types using RNA-seq gene expression profiles. It includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, validation, and test evaluation — all implemented in Python using scikit-learn and XGBoost.
 
 ---
 
-## 📚 Project Overview
+## 📚 Overview
 
-### 🔍 Objective
-To classify cancer types based on gene expression data using various supervised machine learning algorithms.
-
-### 🧪 Dataset
-- RNA-Seq gene expression values per sample
-- Each row = 1 patient sample
-- Each column = expression of a gene
-- Target variable: `Cancer_Group` (multiclass)
+- 🔬 **Dataset**: RNA-seq gene expression data, with cancer types grouped into biologically relevant categories.
+- 🧪 **Task**: Multiclass classification to predict cancer group from gene expression profiles.
+- 🧠 **ML Models**: Logistic Regression, SVM, Decision Tree, Random Forest, XGBoost, Gradient Boosting.
 
 ---
 
-## 🧠 Features
+## 📊 Features
 
-- 📊 **Exploratory Data Analysis (EDA)**:
-  - PCA plots, top gene variance, and correlation heatmaps
+### 🧬 Feature Selection
+- Top 75 genes selected from each of 3 methods:
+  - ANOVA F-score
+  - Mutual Information
+  - Random Forest importance
+- Final features = **intersection** of top 75 from all three methods
 
-- 🧬 **Feature Selection**:
-  - Top genes selected by:
-    - ANOVA F-score
-    - Mutual Information
-    - Random Forest Importance
-  - Final features = intersection of top 75 from each method
+### 🤖 Model Training & Evaluation
+- Data split into **train (60%) / validation (20%) / test (20%)**
+- Six classifiers trained and evaluated using:
+  - Precision, Recall, F1-score
+  - Macro-averaged ROC-AUC
+- Best model selected by **validation F1-score**
+- Final performance reported on the **independent test set**
 
-- 🤖 **Model Training**:
-  - Classifiers: 
-    - Logistic Regression
-    - SVM
-    - Decision Tree
-    - Random Forest
-    - XGBoost
-    - Gradient Boosting
-  - Evaluated using:
-    - Precision, Recall, F1-Score
-    - ROC-AUC (Macro-average)
-
-- 🧪 **Validation + Testing**:
-  - 60/20/20 split: training, validation, test
-  - Best model chosen based on validation F1-score
-  - Final evaluation done on independent test set
+### 📈 Visual Outputs
+- PCA plots
+- Heatmaps (correlation & sample-gene)
+- ROC curves (macro-average)
+- Confusion matrices
 
 ---
 
-## 📊 Results
+## 🚀 How to Run
 
-The notebook outputs:
-- 📈 Macro-average ROC curves
-- 🧾 Classification reports
-- 🧮 Confusion matrices
-- 📋 Tabular summary of model metrics
+1. Clone this repo
+2. Open `CancerPred.ipynb` in Jupyter Notebook or Google Colab
+3. Install dependencies:
+   ```bash
+   pip install pandas scikit-learn xgboost matplotlib seaborn numpy
+   ```
+4. Run all cells step-by-step
 
 ---
 
-## 📦Installation
+## 📁 Files
 
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
 ```
-or 
-```Manually
-pip install pandas scikit-learn xgboost matplotlib seaborn numpy
+├── CancerPred.ipynb       # Main notebook
+├── README.md              # You're reading this
+└── requirements.txt       
+└── data.zip               # Dataset used for the work 
+
 ```
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙌 Acknowledgements
+
+- The Cancer Genome Atlas (TCGA)
+- scikit-learn developers
+- XGBoost community
+
+---
+
+> ✅ This notebook is Colab-ready and designed to be easily extended for clinical genomics applications.
