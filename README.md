@@ -11,6 +11,12 @@ This project presents a complete machine learning pipeline for predicting cancer
 - **ML Models**: Logistic Regression, SVM, Decision Tree, Random Forest, XGBoost, Gradient Boosting.
 
 ---
+## Dataset
+Source: Kaggle - Cancer RNA-Seq Data
+
+Description: The dataset contains RNA-seq gene expression profiles of various cancer types, grouped into biologically meaningful categories.
+
+Please download and extract the dataset (archive_kaggle_cancer.zip) into the working directory before running the notebook.
 
 ## Features
 
