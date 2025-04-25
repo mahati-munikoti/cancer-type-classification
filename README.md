@@ -1,27 +1,27 @@
-# 🧬 Cancer Type Classification Using Gene Expression Data
+# Cancer Type Classification Using Gene Expression Data
 
 This project presents a complete machine learning pipeline for predicting cancer types using RNA-seq gene expression profiles. It includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, validation, and test evaluation — all implemented in Python using scikit-learn and XGBoost.
 
 ---
 
-## 📚 Overview
+## Overview
 
-- 🔬 **Dataset**: RNA-seq gene expression data, with cancer types grouped into biologically relevant categories.
-- 🧪 **Task**: Multiclass classification to predict cancer group from gene expression profiles.
-- 🧠 **ML Models**: Logistic Regression, SVM, Decision Tree, Random Forest, XGBoost, Gradient Boosting.
+- **Dataset**: RNA-seq gene expression data, with cancer types grouped into biologically relevant categories.
+- **Task**: Multiclass classification to predict cancer group from gene expression profiles.
+- **ML Models**: Logistic Regression, SVM, Decision Tree, Random Forest, XGBoost, Gradient Boosting.
 
 ---
 
-## 📊 Features
+## Features
 
-### 🧬 Feature Selection
+### Feature Selection
 - Top 75 genes selected from each of 3 methods:
   - ANOVA F-score
   - Mutual Information
   - Random Forest importance
 - Final features = **intersection** of top 75 from all three methods
 
-### 🤖 Model Training & Evaluation
+### Model Training & Evaluation
 - Data split into **train (60%) / validation (20%) / test (20%)**
 - Six classifiers trained and evaluated using:
   - Precision, Recall, F1-score
@@ -29,7 +29,7 @@ This project presents a complete machine learning pipeline for predicting cancer
 - Best model selected by **validation F1-score**
 - Final performance reported on the **independent test set**
 
-### 📈 Visual Outputs
+### Visual Outputs
 - PCA plots
 - Heatmaps (correlation & sample-gene)
 - ROC curves (macro-average)
@@ -37,7 +37,7 @@ This project presents a complete machine learning pipeline for predicting cancer
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone this repo
 2. Open `CancerPred.ipynb` in Jupyter Notebook or Google Colab
@@ -45,11 +45,15 @@ This project presents a complete machine learning pipeline for predicting cancer
    ```bash
    pip install pandas scikit-learn xgboost matplotlib seaborn numpy
    ```
-4. Run all cells step-by-step
+   or
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Run all cells step-by-step
 
 ---
 
-## 📁 Files
+## Files
 
 ```
 ├── CancerPred.ipynb       # Main notebook
@@ -61,18 +65,18 @@ This project presents a complete machine learning pipeline for predicting cancer
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
-- The Cancer Genome Atlas (TCGA)
+- Kaggle and The Cancer Genome Atlas (TCGA)
 - scikit-learn developers
 - XGBoost community
 
 ---
 
-> ✅ This notebook is Colab-ready and designed to be easily extended for clinical genomics applications.
+> This notebook is Colab-ready and designed to be easily extended for clinical genomics applications.
